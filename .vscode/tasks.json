@@ -1,0 +1,61 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "label": "cmake generate",
+    //"command": "powershell",
+    "type": "shell",
+    //"args" : ["/C"],
+
+    "options": {
+        "cwd": "${workspaceRoot}/build"
+    },
+    "tasks": [
+        {
+            "label": "cmake",
+            "command": "cmake",
+            "args": [
+                "-G",
+                "'Visual Studio 15 2017 Win64'",
+                "-DCMAKE_BUILD_TYPE=Debug",
+                "./.."
+            ],
+            "problemMatcher": [
+                "$msCompile"
+            ]
+        }
+    ]
+
+
+
+        // "command": "powershell",
+        // "args": ["/C"],
+        // "showOutput": "always",
+        // "suppressTaskName": true,
+        // "options": {
+        //     "cwd": "${workspaceRoot}"
+        // },
+        // "tasks": [
+        //     {
+        //         "taskName": "hello",
+        //         "args": [
+        //             "make hello"
+        //         ],
+        //         "isBuildCommand": true
+        //     },
+        //     {
+        //         "taskName": "clean",
+        //         "args": [
+        //             "make clean"
+        //         ]
+        //     },
+        //     {
+        //         "taskName": "compile w/o makefile",
+        //         "args": [
+        //             "clang++ -Wall -g helloworld.cpp -o hello"
+        //         ],
+        //         "echoCommand": true
+        //     }
+        // ]
+    
+}
